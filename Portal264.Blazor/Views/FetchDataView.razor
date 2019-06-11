@@ -1,5 +1,15 @@
 ﻿@page "/fetchdatamvvm"
-@inject HttpClient Http
+@using  Portal264.Blazor.ViewModels
+@inject IFetchDataViewModel fetchDataViewModel
 
 <h1>Weather forecast</h1>
 <p>This component demonstrates fetching data from the server.</p>
+
+@if (fetchDataViewModel.WeatherForecasts == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+
+}
