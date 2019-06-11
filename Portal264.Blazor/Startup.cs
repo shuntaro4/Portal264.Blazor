@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Components.Builder;
 using Microsoft.Extensions.DependencyInjection;
+using Portal264.Blazor.Models;
 using Portal264.Blazor.ViewModels;
 
 namespace Portal264.Blazor
@@ -9,6 +10,7 @@ namespace Portal264.Blazor
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<IFetchDataViewModel, FetchDataViewModel>();
+            services.AddTransient<IFetchDataModel, FetchDataModel>();
         }
 
         public void Configure(IComponentsApplicationBuilder app)
