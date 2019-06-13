@@ -2,7 +2,7 @@
 
 namespace Portal264.Blazor
 {
-    // Todo tutoral https://itnext.io/using-bing-maps-in-blazor-with-jsinterop-and-typescript-90e888e0e2fd
+    // todo next tutoral https://itnext.io/adding-features-to-a-simple-blazor-mvvm-client-with-composition-f31bfb01e20a
     public class Program
     {
         public static void Main(string[] args)
