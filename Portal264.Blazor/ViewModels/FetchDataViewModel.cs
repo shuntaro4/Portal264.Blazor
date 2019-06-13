@@ -9,7 +9,15 @@ namespace Portal264.Blazor.ViewModels
     {
         IWeatherForecast[] WeatherForecasts { get; set; }
 
+        string DisplayTemperatureScaleShort { get; }
+
+        string DisplayOtherTemperatureScaleLong { get; }
+
+        int DisplayTemperature(int temperature);
+
         Task RetrieveForecastsAsync();
+
+        void ToggleTemperatureScale();
     }
 
     public class FetchDataViewModel : IFetchDataViewModel
@@ -23,6 +31,24 @@ namespace Portal264.Blazor.ViewModels
         }
 
         private IFetchDataModel _fetchDataModel;
+
+        private bool _displayFahrenheit;
+
+        public string DisplayTemperatureScaleShort
+        {
+            get
+            {
+                return _displayFahrenheit ? "F" : "C";
+            }
+        }
+
+        public string DisplayOtherTemperatureScaleLong
+        {
+            get
+            {
+                return !_displayFahrenheit ? "Fahrenheit" : "Celsius";
+            }
+        }
 
         public FetchDataViewModel(IFetchDataModel fetchDataModel)
         {
@@ -47,6 +73,16 @@ namespace Portal264.Blazor.ViewModels
             _weatherForecasts = newForecasts.ToArray();
 
             Console.WriteLine("FetchDataViewModel Forecasts Retrieved");
+        }
+
+        public int DisplayTemperature(int temperature)
+        {
+            return _displayFahrenheit ? 32 + (int)(temperature / 0.5556) : temperature;
+        }
+
+        public void ToggleTemperatureScale()
+        {
+            _displayFahrenheit = !_displayFahrenheit;
         }
     }
 }
