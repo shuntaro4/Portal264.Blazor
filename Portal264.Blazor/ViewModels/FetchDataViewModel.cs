@@ -7,53 +7,49 @@ namespace Portal264.Blazor.ViewModels
 {
     public interface IFetchDataViewModel
     {
-        IWeatherForecast[] WeatherForecasts { get; set; }
-
-        string DisplayTemperatureScaleShort { get; }
-
         string DisplayOtherTemperatureScaleLong { get; }
 
-        int DisplayTemperature(int temperature);
+        IBasicForecastViewModel BasicForecastViewModel { get; }
+
+        string DisplayPremiumToggleMessage { get; }
 
         Task RetrieveForecastsAsync();
+
+        void TogglePremiumMembership();
 
         void ToggleTemperatureScale();
     }
 
     public class FetchDataViewModel : IFetchDataViewModel
     {
-        private IWeatherForecast[] _weatherForecasts;
-
-        public IWeatherForecast[] WeatherForecasts
-        {
-            get => _weatherForecasts;
-            set => _weatherForecasts = value;
-        }
-
         private IFetchDataModel _fetchDataModel;
-
         private bool _displayFahrenheit;
-
-        public string DisplayTemperatureScaleShort
-        {
-            get
-            {
-                return _displayFahrenheit ? "F" : "C";
-            }
-        }
+        private IBasicForecastViewModel _basicForecastViewModel;
+        private bool _isPremiumMember;
 
         public string DisplayOtherTemperatureScaleLong
         {
             get
             {
-                return !_displayFahrenheit ? "Fahrenheit" : "Celsius";
+                return _displayFahrenheit ? "Celsius" : "Fahrenheit";
             }
         }
 
-        public FetchDataViewModel(IFetchDataModel fetchDataModel)
+        public IBasicForecastViewModel BasicForecastViewModel
+        {
+            get => _basicForecastViewModel;
+            private set => _basicForecastViewModel = value;
+        }
+
+        public string DisplayPremiumToggleMessage => _isPremiumMember ? "Change to Basic" : "Change to Premium";
+
+        public FetchDataViewModel(IFetchDataModel fetchDataModel, IBasicForecastViewModel basicForecastViewModel)
         {
             Console.WriteLine("FetchDataViewModel Constructor Executing");
             _fetchDataModel = fetchDataModel;
+            _basicForecastViewModel = basicForecastViewModel;
+            _displayFahrenheit = true;
+            _isPremiumMember = false;
         }
 
         public async Task RetrieveForecastsAsync()
@@ -62,27 +58,24 @@ namespace Portal264.Blazor.ViewModels
             List<IWeatherForecast> newForecasts = new List<IWeatherForecast>();
             foreach (IWeatherForecast forecast in _fetchDataModel.WeatherForecasts)
             {
-                IWeatherForecast newForecast = new WeatherForecast
-                {
-                    Date = forecast.Date,
-                    Summary = forecast.Summary,
-                    TemperatureC = forecast.TemperatureC
-                };
+                IWeatherForecast newForecast = new WeatherForecast();
+                newForecast.Date = forecast.Date;
+                newForecast.Summary = forecast.Summary;
+                newForecast.TemperatureC = forecast.TemperatureC;
                 newForecasts.Add(forecast);
             }
-            _weatherForecasts = newForecasts.ToArray();
-
+            _basicForecastViewModel.WeatherForecasts = newForecasts.ToArray();
             Console.WriteLine("FetchDataViewModel Forecasts Retrieved");
-        }
-
-        public int DisplayTemperature(int temperature)
-        {
-            return _displayFahrenheit ? 32 + (int)(temperature / 0.5556) : temperature;
         }
 
         public void ToggleTemperatureScale()
         {
             _displayFahrenheit = !_displayFahrenheit;
+            _basicForecastViewModel.ToggleTemperatureScale();
+        }
+        public void TogglePremiumMembership()
+        {
+            _isPremiumMember = !_isPremiumMember;
         }
     }
 }
