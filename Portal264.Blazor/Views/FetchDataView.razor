@@ -9,6 +9,9 @@
 <button class="btn btn-primary" onclick=@fetchDataViewModel.ToggleTemperatureScale>
     Display @fetchDataViewModel.DisplayOtherTemperatureScaleLong
 </button>
+<button class="btn btn-primary" onclick=@fetchDataViewModel.TogglePremiumMembership>
+    @fetchDataViewModel.DisplayPremiumToggleMessage
+</button>
 
 @if (fetchDataViewModel.BasicForecastViewModel.WeatherForecasts == null)
 {
