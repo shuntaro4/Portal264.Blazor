@@ -1,5 +1,6 @@
 ﻿@page "/fetchdatamvvm"
 @using  Portal264.Blazor.ViewModels
+@using  Portal264.Blazor.Components
 @inject IFetchDataViewModel fetchDataViewModel
 
 <h1>Weather forecast</h1>
@@ -9,31 +10,13 @@
     Display @fetchDataViewModel.DisplayOtherTemperatureScaleLong
 </button>
 
-@if (fetchDataViewModel.WeatherForecasts == null)
+@if (fetchDataViewModel.BasicForecastViewModel.WeatherForecasts == null)
 {
     <p><em>Loading...</em></p>
 }
 else
 {
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Date</th>
-                <th>Temp. (@fetchDataViewModel.DisplayTemperatureScaleShort)</th>
-                <th>Summary</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var forecast in fetchDataViewModel.WeatherForecasts)
-            {
-                <tr>
-                    <td>@forecast.Date.ToShortDateString()</td>
-                    <td>@fetchDataViewModel.DisplayTemperature(@forecast.TemperatureC)</td>
-                    <td>@forecast.Summary</td>
-                </tr>
-            }
-        </tbody>
-    </table>
+    <BasicForecast ViewModel="@fetchDataViewModel.BasicForecastViewModel" />
 }
 
 @functions {
