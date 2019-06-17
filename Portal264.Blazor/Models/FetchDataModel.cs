@@ -13,6 +13,10 @@ namespace Portal264.Blazor.Models
         WeatherDotGovForecast RealWeatherForecast { get; }
 
         Task RetrieveRealForecastAsync();
+
+        Task RetrieveHourlyForecastAsync();
+
+        WeatherDotGovForecast HourlyWeatherForecast { get; }
     }
 
     public class FetchDataModel : IFetchDataModel
@@ -31,6 +35,10 @@ namespace Portal264.Blazor.Models
 
         public WeatherDotGovForecast RealWeatherForecast { get => _realWeatherForecast; private set => _realWeatherForecast = value; }
 
+        private WeatherDotGovForecast _hourlyWeatherForecast;
+
+        public WeatherDotGovForecast HourlyWeatherForecast { get => _hourlyWeatherForecast; private set => _hourlyWeatherForecast = value; }
+
         public FetchDataModel(HttpClient http)
         {
             _http = http;
@@ -45,6 +53,12 @@ namespace Portal264.Blazor.Models
         {
             _realWeatherForecast = await _http.GetJsonAsync<WeatherDotGovForecast>
               ("https://api.weather.gov/gridpoints/ALY/59,14/forecast");
+        }
+
+        public async Task RetrieveHourlyForecastAsync()
+        {
+            _hourlyWeatherForecast = await _http.GetJsonAsync<WeatherDotGovForecast>
+                ("https://api.weather.gov/gridpoints/ALY/59,14/forecast/hourly");
         }
     }
 }
