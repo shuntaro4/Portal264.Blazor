@@ -1,6 +1,7 @@
 ﻿using Portal264.Blazor.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Portal264.Blazor.ViewModels
@@ -26,6 +27,7 @@ namespace Portal264.Blazor.ViewModels
         private bool _displayFahrenheit;
         private IBasicForecastViewModel _basicForecastViewModel;
         private bool _isPremiumMember;
+        private bool _isDailyForecast;
 
         public string DisplayOtherTemperatureScaleLong
         {
@@ -51,6 +53,7 @@ namespace Portal264.Blazor.ViewModels
             _basicForecastViewModel = basicForecastViewModel;
             _displayFahrenheit = true;
             _isPremiumMember = false;
+            _isDailyForecast = true;
         }
 
         public async Task RetrieveForecastsAsync()
@@ -94,13 +97,31 @@ namespace Portal264.Blazor.ViewModels
 
         private async Task PopulateEnhancedForecastData(List<IWeatherForecast> newForecasts)
         {
-            await _fetchDataModel.RetrieveRealForecastAsync();
-            foreach (Period forecast in _fetchDataModel.RealWeatherForecast.properties.periods)
+            List<Period> forecasts = new List<Period>();
+            if (_isDailyForecast)
+            {
+                await _fetchDataModel.RetrieveRealForecastAsync();
+                forecasts.AddRange(_fetchDataModel.RealWeatherForecast.properties.periods);
+            }
+            else
+            {
+                await _fetchDataModel.RetrieveHourlyForecastAsync();
+                forecasts.AddRange(_fetchDataModel.HourlyWeatherForecast.properties.periods);
+            }
+            foreach (Period forecast in forecasts)
             {
                 IWeatherForecast newForecast = new WeatherForecast();
                 newForecast.Date = forecast.startTime;
-                newForecast.Summary = forecast.name + " - " + forecast.shortForecast;
-                newForecast.TemperatureC = (int)((forecast.temperature - 32) * 0.556);
+                if (_isDailyForecast)
+                {
+                    newForecast.Summary = forecast.name + " - ";
+                }
+                else
+                {
+                    newForecast.Summary = "";
+                }
+                newForecast.Summary = newForecast.Summary + forecast.shortForecast;
+                newForecast.TemperatureC = (int)((forecast.temperature - 32) * 5 / 9);
                 newForecasts.Add(newForecast);
             }
         }
@@ -109,7 +130,20 @@ namespace Portal264.Blazor.ViewModels
         {
             if (_isPremiumMember)
             {
-                Console.WriteLine(selectedDate.ToLongDateString());
+                _isDailyForecast = !_isDailyForecast;
+                List<IWeatherForecast> newForecasts = new List<IWeatherForecast>();
+                await PopulateEnhancedForecastData(newForecasts);
+                if (_isDailyForecast)
+                {
+                    _basicForecastViewModel.WeatherForecasts = newForecasts.ToArray();
+                }
+                else
+                {
+                    _basicForecastViewModel.WeatherForecasts =
+                        newForecasts
+                        .Where(nf => nf.Date.ToShortDateString() == selectedDate.ToShortDateString())
+                        .ToArray();
+                }
             }
         }
     }

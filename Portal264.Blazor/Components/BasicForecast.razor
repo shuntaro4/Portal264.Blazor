@@ -12,7 +12,7 @@
         @foreach (var forecast in ViewModel.WeatherForecasts)
         {
             <tr onclick="@(async () => await ViewModel.ToggleForecast(forecast.Date))">
-                <td>@forecast.Date.ToShortDateString()</td>
+                <td>@forecast.Date.ToString("MM/dd/yyyy h:mm tt")</td>
                 <td>@ViewModel.DisplayTemperature(@forecast.TemperatureC)</td>
                 <td>@forecast.Summary</td>
             </tr>
