@@ -47,6 +47,7 @@ namespace Portal264.Blazor.ViewModels
         {
             Console.WriteLine("FetchDataViewModel Constructor Executing");
             _fetchDataModel = fetchDataModel;
+            basicForecastViewModel.ToggleForecastDelegate = ToggleForecast;
             _basicForecastViewModel = basicForecastViewModel;
             _displayFahrenheit = true;
             _isPremiumMember = false;
@@ -101,6 +102,14 @@ namespace Portal264.Blazor.ViewModels
                 newForecast.Summary = forecast.name + " - " + forecast.shortForecast;
                 newForecast.TemperatureC = (int)((forecast.temperature - 32) * 0.556);
                 newForecasts.Add(newForecast);
+            }
+        }
+
+        private async Task ToggleForecast(DateTime selectedDate)
+        {
+            if (_isPremiumMember)
+            {
+                Console.WriteLine(selectedDate.ToLongDateString());
             }
         }
     }

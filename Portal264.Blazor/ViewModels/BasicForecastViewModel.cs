@@ -1,7 +1,10 @@
 ﻿using Portal264.Blazor.Models;
+using System;
+using System.Threading.Tasks;
 
 namespace Portal264.Blazor.ViewModels
 {
+    public delegate Task ToggleDelegate(DateTime selectedDay);
 
     public interface IBasicForecastViewModel
     {
@@ -12,6 +15,10 @@ namespace Portal264.Blazor.ViewModels
         int DisplayTemperature(int temperature);
 
         void ToggleTemperatureScale();
+
+        ToggleDelegate ToggleForecastDelegate { get; set; }
+
+        Task ToggleForecast(DateTime selectedDate);
     }
 
     public class BasicForecastViewModel : IBasicForecastViewModel
@@ -35,6 +42,13 @@ namespace Portal264.Blazor.ViewModels
         public void ToggleTemperatureScale()
         {
             _displayFahrenheit = !_displayFahrenheit;
+        }
+
+        public ToggleDelegate ToggleForecastDelegate { get; set; }
+
+        public async Task ToggleForecast(DateTime selectedDate)
+        {
+            await ToggleForecastDelegate(selectedDate);
         }
     }
 }
