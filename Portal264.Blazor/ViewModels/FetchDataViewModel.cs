@@ -98,7 +98,7 @@ namespace Portal264.Blazor.ViewModels
             {
                 IWeatherForecast newForecast = new WeatherForecast();
                 newForecast.Date = forecast.startTime;
-                newForecast.Summary = forecast.shortForecast;
+                newForecast.Summary = forecast.name + " - " + forecast.shortForecast;
                 newForecast.TemperatureC = (int)((forecast.temperature - 32) * 0.556);
                 newForecasts.Add(newForecast);
             }
