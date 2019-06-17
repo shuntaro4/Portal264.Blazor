@@ -9,7 +9,7 @@
 <button class="btn btn-primary" onclick=@fetchDataViewModel.ToggleTemperatureScale>
     Display @fetchDataViewModel.DisplayOtherTemperatureScaleLong
 </button>
-<button class="btn btn-primary" onclick=@fetchDataViewModel.TogglePremiumMembership>
+<button class="btn btn-primary" onclick=@(async () => await fetchDataViewModel.TogglePremiumMembership())>
     @fetchDataViewModel.DisplayPremiumToggleMessage
 </button>
 

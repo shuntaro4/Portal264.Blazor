@@ -15,7 +15,7 @@ namespace Portal264.Blazor.ViewModels
 
         Task RetrieveForecastsAsync();
 
-        void TogglePremiumMembership();
+        Task TogglePremiumMembership();
 
         void ToggleTemperatureScale();
     }
@@ -54,15 +54,14 @@ namespace Portal264.Blazor.ViewModels
 
         public async Task RetrieveForecastsAsync()
         {
-            await _fetchDataModel.RetrieveForecastsAsync();
             List<IWeatherForecast> newForecasts = new List<IWeatherForecast>();
-            foreach (IWeatherForecast forecast in _fetchDataModel.WeatherForecasts)
+            if (_isPremiumMember)
             {
-                IWeatherForecast newForecast = new WeatherForecast();
-                newForecast.Date = forecast.Date;
-                newForecast.Summary = forecast.Summary;
-                newForecast.TemperatureC = forecast.TemperatureC;
-                newForecasts.Add(forecast);
+                await PopulateEnhancedForecastData(newForecasts);
+            }
+            else
+            {
+                await PopulateStandardForecastData(newForecasts);
             }
             _basicForecastViewModel.WeatherForecasts = newForecasts.ToArray();
             Console.WriteLine("FetchDataViewModel Forecasts Retrieved");
@@ -73,9 +72,37 @@ namespace Portal264.Blazor.ViewModels
             _displayFahrenheit = !_displayFahrenheit;
             _basicForecastViewModel.ToggleTemperatureScale();
         }
-        public void TogglePremiumMembership()
+        public async Task TogglePremiumMembership()
         {
             _isPremiumMember = !_isPremiumMember;
+            await RetrieveForecastsAsync();
+        }
+
+        private async Task PopulateStandardForecastData(List<IWeatherForecast> newForecasts)
+        {
+            await _fetchDataModel.RetrieveForecastsAsync();
+            foreach (IWeatherForecast forecast in _fetchDataModel.WeatherForecasts)
+            {
+                IWeatherForecast newForecast = new WeatherForecast();
+                newForecast.Date = forecast.Date;
+                newForecast.Summary = forecast.Summary;
+                newForecast.TemperatureC = forecast.TemperatureC;
+                newForecasts.Add(forecast);
+            }
+        }
+
+        private async Task PopulateEnhancedForecastData(List<IWeatherForecast> newForecasts)
+        {
+            await _fetchDataModel.RetrieveRealForecastAsync();
+            foreach (Period forecast in _fetchDataModel.RealWeatherForecast.properties.periods)
+            {
+                IWeatherForecast newForecast = new WeatherForecast();
+                newForecast.Date = forecast.startTime;
+                newForecast.Summary = forecast.shortForecast;
+                newForecast.TemperatureC = (int)((forecast.temperature - 32) * 0.556);
+                newForecasts.Add(newForecast);
+            }
         }
     }
 }
+
