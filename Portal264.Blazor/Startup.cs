@@ -12,6 +12,9 @@ namespace Portal264.Blazor
             services.AddTransient<IFetchDataViewModel, FetchDataViewModel>();
             services.AddTransient<IFetchDataModel, FetchDataModel>();
             services.AddTransient<IBasicForecastViewModel, BasicForecastViewModel>();
+
+            services.AddTransient<IFullForecastModel, DailyForecastModel>();
+            services.AddTransient<IBasicForecastModel, DailyForecastModel>();
         }
 
         public void Configure(IComponentsApplicationBuilder app)
