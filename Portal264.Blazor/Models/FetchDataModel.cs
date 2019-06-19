@@ -52,7 +52,11 @@ namespace Portal264.Blazor.Models
 
         public async Task RetrieveForecastsAsync()
         {
-            _weatherForecasts = await _http.GetJsonAsync<WeatherForecast[]>("sample-data/weather.json");
+            if (_weatherForecasts == null)
+            {
+                _weatherForecasts = await
+                   _basicForecast.RetrieveBasicForecast();
+            }
         }
 
         public async Task RetrieveRealForecastAsync()
