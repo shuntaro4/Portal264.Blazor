@@ -39,9 +39,15 @@ namespace Portal264.Blazor.Models
 
         public WeatherDotGovForecast HourlyWeatherForecast { get => _hourlyWeatherForecast; private set => _hourlyWeatherForecast = value; }
 
-        public FetchDataModel(HttpClient http)
+        private IFullForecastModel _dailyForecast;
+
+        private IBasicForecastModel _basicForecast;
+
+        public FetchDataModel(HttpClient http, IFullForecastModel dailyForecast, IBasicForecastModel basicForecast)
         {
             _http = http;
+            _dailyForecast = dailyForecast;
+            _basicForecast = basicForecast;
         }
 
         public async Task RetrieveForecastsAsync()
