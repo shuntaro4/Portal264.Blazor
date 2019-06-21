@@ -7,7 +7,7 @@ namespace Portal264.Blazor.Models
     public interface IFetchDataModel
     {
         IWeatherForecast[] WeatherForecasts { get; }
-        WeatherDotGovForecast RealWeatherForecast { get; }
+        IWeatherDotGovForecast RealWeatherForecast { get; }
         WeatherDotGovForecast HourlyWeatherForecast { get; }
 
         Task RetrieveForecastsAsync();
@@ -19,7 +19,7 @@ namespace Portal264.Blazor.Models
     {
         private HttpClient _http;
         private IWeatherForecast[] _weatherForecasts;
-        private WeatherDotGovForecast _realWeatherForecast;
+        private IWeatherDotGovForecast _realWeatherForecast;
         private WeatherDotGovForecast _hourlyWeatherForecast;
         private IFullForecastModel _dailyForecast;
         private IBasicForecastModel _basicForecast;
@@ -30,7 +30,7 @@ namespace Portal264.Blazor.Models
             private set => _weatherForecasts = value;
         }
 
-        public WeatherDotGovForecast RealWeatherForecast
+        public IWeatherDotGovForecast RealWeatherForecast
         {
             get => _realWeatherForecast;
             private set => _realWeatherForecast = value;
@@ -60,8 +60,11 @@ namespace Portal264.Blazor.Models
 
         public async Task RetrieveRealForecastAsync()
         {
-            _realWeatherForecast = await _http.GetJsonAsync<WeatherDotGovForecast>
-              ("https://api.weather.gov/gridpoints/ALY/59,14/forecast");
+            if (_realWeatherForecast == null)
+            {
+                _realWeatherForecast = await
+                   _dailyForecast.RetrieveFullForecast();
+            }
         }
 
         public async Task RetrieveHourlyForecastAsync()
