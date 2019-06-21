@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Components;
-using System.Net.Http;
+﻿using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace Portal264.Blazor.Models
@@ -8,7 +7,7 @@ namespace Portal264.Blazor.Models
     {
         IWeatherForecast[] WeatherForecasts { get; }
         IWeatherDotGovForecast RealWeatherForecast { get; }
-        WeatherDotGovForecast HourlyWeatherForecast { get; }
+        IWeatherDotGovForecast HourlyWeatherForecast { get; }
 
         Task RetrieveForecastsAsync();
         Task RetrieveHourlyForecastAsync();
@@ -20,7 +19,7 @@ namespace Portal264.Blazor.Models
         private HttpClient _http;
         private IWeatherForecast[] _weatherForecasts;
         private IWeatherDotGovForecast _realWeatherForecast;
-        private WeatherDotGovForecast _hourlyWeatherForecast;
+        private IWeatherDotGovForecast _hourlyWeatherForecast;
         private IFullForecastModel _dailyForecast;
         private IBasicForecastModel _basicForecast;
 
@@ -36,7 +35,7 @@ namespace Portal264.Blazor.Models
             private set => _realWeatherForecast = value;
         }
 
-        public WeatherDotGovForecast HourlyWeatherForecast
+        public IWeatherDotGovForecast HourlyWeatherForecast
         {
             get => _hourlyWeatherForecast;
             private set => _hourlyWeatherForecast = value;
@@ -69,8 +68,11 @@ namespace Portal264.Blazor.Models
 
         public async Task RetrieveHourlyForecastAsync()
         {
-            _hourlyWeatherForecast = await _http.GetJsonAsync<WeatherDotGovForecast>
-                ("https://api.weather.gov/gridpoints/ALY/59,14/forecast/hourly");
+            if (_hourlyWeatherForecast == null)
+            {
+                _realWeatherForecast = await
+                    _dailyForecast.RetrieveFullForecast();
+            }
         }
     }
 }
