@@ -7,23 +7,22 @@ namespace Portal264.Blazor.Models
     public interface IFetchDataModel
     {
         IWeatherForecast[] WeatherForecasts { get; }
+        WeatherDotGovForecast RealWeatherForecast { get; }
+        WeatherDotGovForecast HourlyWeatherForecast { get; }
 
         Task RetrieveForecastsAsync();
-
-        WeatherDotGovForecast RealWeatherForecast { get; }
-
-        Task RetrieveRealForecastAsync();
-
         Task RetrieveHourlyForecastAsync();
-
-        WeatherDotGovForecast HourlyWeatherForecast { get; }
+        Task RetrieveRealForecastAsync();
     }
 
     public class FetchDataModel : IFetchDataModel
     {
         private HttpClient _http;
-
         private IWeatherForecast[] _weatherForecasts;
+        private WeatherDotGovForecast _realWeatherForecast;
+        private WeatherDotGovForecast _hourlyWeatherForecast;
+        private IFullForecastModel _dailyForecast;
+        private IBasicForecastModel _basicForecast;
 
         public IWeatherForecast[] WeatherForecasts
         {
@@ -31,17 +30,17 @@ namespace Portal264.Blazor.Models
             private set => _weatherForecasts = value;
         }
 
-        private WeatherDotGovForecast _realWeatherForecast;
+        public WeatherDotGovForecast RealWeatherForecast
+        {
+            get => _realWeatherForecast;
+            private set => _realWeatherForecast = value;
+        }
 
-        public WeatherDotGovForecast RealWeatherForecast { get => _realWeatherForecast; private set => _realWeatherForecast = value; }
-
-        private WeatherDotGovForecast _hourlyWeatherForecast;
-
-        public WeatherDotGovForecast HourlyWeatherForecast { get => _hourlyWeatherForecast; private set => _hourlyWeatherForecast = value; }
-
-        private IFullForecastModel _dailyForecast;
-
-        private IBasicForecastModel _basicForecast;
+        public WeatherDotGovForecast HourlyWeatherForecast
+        {
+            get => _hourlyWeatherForecast;
+            private set => _hourlyWeatherForecast = value;
+        }
 
         public FetchDataModel(HttpClient http, IFullForecastModel dailyForecast, IBasicForecastModel basicForecast)
         {
