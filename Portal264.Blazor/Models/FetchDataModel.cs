@@ -1,4 +1,6 @@
-﻿using System.Net.Http;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace Portal264.Blazor.Models
@@ -41,10 +43,10 @@ namespace Portal264.Blazor.Models
             private set => _hourlyWeatherForecast = value;
         }
 
-        public FetchDataModel(HttpClient http, IFullForecastModel dailyForecast, IBasicForecastModel basicForecast)
+        public FetchDataModel(HttpClient http, IEnumerable<IFullForecastModel> fullForecasts, IBasicForecastModel basicForecast)
         {
             _http = http;
-            _dailyForecast = dailyForecast;
+            _dailyForecast = fullForecasts.Where(x => x.Supports == supports.daily).First();
             _basicForecast = basicForecast;
         }
 
