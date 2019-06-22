@@ -23,6 +23,7 @@ namespace Portal264.Blazor.Models
         private IWeatherDotGovForecast _realWeatherForecast;
         private IWeatherDotGovForecast _hourlyWeatherForecast;
         private IFullForecastModel _dailyForecast;
+        private IFullForecastModel _hourlyForecast;
         private IBasicForecastModel _basicForecast;
 
         public IWeatherForecast[] WeatherForecasts
@@ -47,6 +48,7 @@ namespace Portal264.Blazor.Models
         {
             _http = http;
             _dailyForecast = fullForecasts.Where(x => x.Supports == supports.daily).First();
+            _hourlyForecast = fullForecasts.Where(f => f.Supports == supports.hourly).First();
             _basicForecast = basicForecast;
         }
 
@@ -72,8 +74,8 @@ namespace Portal264.Blazor.Models
         {
             if (_hourlyWeatherForecast == null)
             {
-                _realWeatherForecast = await
-                    _dailyForecast.RetrieveFullForecast();
+                _hourlyWeatherForecast = await
+                    _hourlyForecast.RetrieveFullForecast();
             }
         }
     }
