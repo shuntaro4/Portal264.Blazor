@@ -14,6 +14,8 @@ namespace Portal264.Blazor
             services.AddTransient<IBasicForecastViewModel, BasicForecastViewModel>();
 
             services.AddTransient<IFullForecastModel, DailyForecastModel>();
+            services.AddTransient<IFullForecastModel, HourlyForecastModel>();
+
             services.AddTransient<IBasicForecastModel, DailyForecastModel>();
         }
 
