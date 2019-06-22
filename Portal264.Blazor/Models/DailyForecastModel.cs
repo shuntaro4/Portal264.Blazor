@@ -8,6 +8,8 @@ namespace Portal264.Blazor.Models
     public interface IFullForecastModel
     {
         Task<IWeatherDotGovForecast> RetrieveFullForecast();
+
+        supports Supports { get; }
     }
     public interface IBasicForecastModel
     {
@@ -18,9 +20,12 @@ namespace Portal264.Blazor.Models
     {
         private HttpClient _httpClient;
 
+        public supports Supports { get; private set; }
+
         public DailyForecastModel(HttpClient httpClient)
         {
             _httpClient = httpClient;
+            Supports = supports.hourly;
         }
 
         public async Task<IWeatherDotGovForecast> RetrieveFullForecast()
