@@ -1,7 +1,6 @@
-using Portal264.Blazor.Client.Models;
-using Portal264.Blazor.Client.ViewModels;
 using Microsoft.AspNetCore.Components.Builder;
 using Microsoft.Extensions.DependencyInjection;
+using Portal264.Blazor.Client.ViewModels;
 using System;
 using System.Linq;
 
@@ -13,6 +12,7 @@ namespace Portal264.Blazor.Client
         {
             services.AddTransient<IFetchDataViewModel, FetchDataViewModel>();
             services.AddTransient<IBasicForecastViewModel, BasicForecastViewModel>();
+            services.AddTransient<IShoppingCartViewModel, ShoppingCartViewModel>();
 
             var assembly = AppDomain.CurrentDomain.GetAssemblies()
                .Where(a => a
@@ -23,7 +23,7 @@ namespace Portal264.Blazor.Client
             foreach (Type t in classes)
             {
                 foreach (Type i in t.GetInterfaces())
-                {                
+                {
                     services.AddTransient(i, t);
                 }
             }
