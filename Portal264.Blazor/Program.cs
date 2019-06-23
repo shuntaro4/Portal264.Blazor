@@ -2,7 +2,7 @@
 
 namespace Portal264.Blazor
 {
-    // todo next tutoral https://itnext.io/refactoring-the-simple-blazor-mvvm-client-adventures-in-dependency-injection-e9866d194ee9
+    // todo next tutoral https://itnext.io/working-with-the-view-in-blazor-mvvm-functions-vs-code-behind-vs-viewmodel-ed3508dba86a
     public class Program
     {
         public static void Main(string[] args)
