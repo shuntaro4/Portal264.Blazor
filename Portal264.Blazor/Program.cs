@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Blazor.Hosting;
 
-namespace Portal264.Blazor.Client
+namespace Portal264.Blazor
 {
     public class Program
     {
