@@ -6,6 +6,8 @@ namespace Portal264.Blazor.ViewModels
     {
         string MailAddress { get; set; }
 
+        string Password { get; set; }
+
         Task LoginAsync();
     }
 }
