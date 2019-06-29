@@ -1,3 +1,18 @@
 ﻿@page "/login"
 @inherits LoginBase
 
+<section class="resume-section p-3 p-lg-5 d-flex flex-column" id="login">
+    <h2>Log in</h2>
+
+    <div class='form-group'>
+        <label for="user_email">Email</label>
+        <input autofocus="autofocus" autocomplete="email" class="form-control" type="email" value=@ViewModel.MailAddress />
+    </div>
+    <div class="form-group">
+        <label for="user_password">Password</label>
+        <input autocomplete="off" class="form-control" type="password" />
+    </div>
+    <div class="actions">
+        <button class="btn btn-secondary" onclick=@ViewModel.LoginAsync>Log in</button>
+    </div>
+</section>
