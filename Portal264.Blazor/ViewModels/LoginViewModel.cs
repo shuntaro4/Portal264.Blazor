@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Firebase.Auth;
+using Portal264.Blazor.Models;
+using System;
 using System.Threading.Tasks;
 
 namespace Portal264.Blazor.ViewModels
@@ -27,9 +29,16 @@ namespace Portal264.Blazor.ViewModels
 
         public async Task LoginAsync()
         {
-            await Task.Delay(500);
-            Console.WriteLine($"MailAddress={MailAddress}");
-            Console.WriteLine($"MailAddress={Password}");
+            try
+            {
+                var auth = new FirebaseAuthProvider(new FirebaseConfig(FirebaseToken.ApiKey));
+                var authLink = await auth.SignInWithEmailAndPasswordAsync(MailAddress, Password);
+                Console.WriteLine("Login Succeeded!");
+            }
+            catch (FirebaseAuthException ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
         }
     }
 }
