@@ -1,5 +1,4 @@
-﻿using Firebase.Auth;
-using Portal264.Blazor.Models;
+﻿using Portal264.Blazor.ApplicationServices;
 using System;
 using System.Threading.Tasks;
 
@@ -23,19 +22,39 @@ namespace Portal264.Blazor.ViewModels
             set => _password = value;
         }
 
-        public LoginViewModel()
+        private readonly ISessionService _sessionService;
+
+        public LoginViewModel(ISessionService sessionService)
         {
+            _sessionService = sessionService;
         }
 
         public async Task LoginAsync()
         {
             try
             {
-                var auth = new FirebaseAuthProvider(new FirebaseConfig(FirebaseToken.ApiKey));
-                var authLink = await auth.SignInWithEmailAndPasswordAsync(MailAddress, Password);
+                var result = await _sessionService.LoginAsync(MailAddress, Password);
+                if (!result)
+                {
+                    Console.WriteLine("Login Failed...");
+                    return;
+                }
                 Console.WriteLine("Login Succeeded!");
             }
-            catch (FirebaseAuthException ex)
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+        }
+
+        public async Task LogoutAsync()
+        {
+            try
+            {
+                await _sessionService.LogoutAsync();
+                Console.WriteLine("Logout Succeeded!");
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
             }
