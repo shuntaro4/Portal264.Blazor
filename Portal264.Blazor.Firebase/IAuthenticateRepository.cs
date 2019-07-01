@@ -6,6 +6,6 @@ namespace Portal264.Blazor.Firebase
     {
         Task<bool> LoginAsync(string mailAddress, string password);
 
-        Task Logout();
+        Task LogoutAsync();
     }
 }

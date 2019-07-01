@@ -21,7 +21,7 @@ namespace Portal264.Blazor.Firebase
             }
         }
 
-        public Task Logout()
+        public Task LogoutAsync()
         {
             throw new NotImplementedException();
         }
