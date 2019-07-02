@@ -9,6 +9,7 @@ namespace Portal264.Blazor
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<ILoginViewModel, LoginViewModel>();
+            services.AddTransient<INewsViewModel, NewsViewModel>();
         }
 
         public void Configure(IComponentsApplicationBuilder app)
