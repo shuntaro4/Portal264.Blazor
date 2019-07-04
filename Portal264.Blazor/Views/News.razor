@@ -11,5 +11,32 @@
         最新情報がありません。
     </div>
 }
+else
+{
+    @foreach(var news in ViewModel.News)
+    {
+    <div class="card mb-3">
+        <div class="card-body">
+            <string class="d-inline-block mb-2 text-primary">
+                Live info
+            </string>
+            <div class="mb-1 text-muted">
+                @news.DisplayCreatedAt
+            </div>
+            <h3 class="mb-0">
+                [
+                <a href="#">@news.DisplayStartAt</a>
+                ]
+            </h3>
+            <p class="card-text mb-auto">
+                ライブ情報が追加されました。
+                チケットのご予約は
+                <a href="#">こちら</a>
+                。
+            </p>
+        </div>
+    </div>
+    }
+}
 </section>
 
