@@ -2,7 +2,7 @@
 
 namespace Portal264.Blazor.Domain
 {
-    public class Concert
+    public class ConcertSummary
     {
         public string Title { get; private set; }
 
@@ -22,7 +22,7 @@ namespace Portal264.Blazor.Domain
 
         public string Place { get; private set; }
 
-        public Concert(string title, DateTime openAt, DateTime startAt, bool active, string place)
+        public ConcertSummary(string title, DateTime openAt, DateTime startAt, bool active, string place)
         {
             Title = title;
             _openAt = openAt;

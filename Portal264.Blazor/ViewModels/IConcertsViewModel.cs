@@ -5,6 +5,6 @@ namespace Portal264.Blazor.ViewModels
 {
     public interface IConcertsViewModel
     {
-        ObservableCollection<Concert> Concerts { get; }
+        ObservableCollection<ConcertSummary> Concerts { get; }
     }
 }
