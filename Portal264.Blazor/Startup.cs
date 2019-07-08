@@ -11,6 +11,10 @@ namespace Portal264.Blazor
             services.AddTransient<ILoginViewModel, LoginViewModel>();
             services.AddTransient<INewsViewModel, NewsViewModel>();
             services.AddTransient<IConcertsViewModel, ConcertsViewModel>();
+
+            // I don't know how to pass the value to ConcertViewModel Constructor.
+            // So, I created ConcertViewModel object in Concert.razor.cs.
+            // services.AddTransient<IConcertViewModel, ConcertViewModel>();
         }
 
         public void Configure(IComponentsApplicationBuilder app)
