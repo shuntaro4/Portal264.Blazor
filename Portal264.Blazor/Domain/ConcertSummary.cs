@@ -22,16 +22,16 @@ namespace Portal264.Blazor.Domain
 
         public bool Active { get; private set; }
 
-        public string Place { get; private set; }
+        public string PlaceName { get; private set; }
 
-        public ConcertSummary(int id, string title, DateTime openAt, DateTime startAt, bool active, string place)
+        public ConcertSummary(int id, string title, DateTime openAt, DateTime startAt, bool active, string placeName)
         {
             Id = id;
             Title = title;
             _openAt = openAt;
             _startAt = startAt;
             Active = active;
-            Place = place;
+            PlaceName = placeName;
         }
     }
 }
