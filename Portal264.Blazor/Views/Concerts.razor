@@ -4,40 +4,40 @@
 <section class="resume-section p-3 p-lg-5 d-flex flex-column">
     <h2>Live</h2>
     @if (ViewModel.Concerts.Count == 0)
-{
-    <div class="subheading mb-5">
-        ライブ情報がありません。
-    </div>
-}
-else
-{
-    @foreach(var concert in ViewModel.Concerts)
     {
-    <div class="card mb-3">
-        <div class="card-body">
-            <string class="d-inline-block mb-2 text-primary">
-                @concert.DisplayDateStartAt
-            </string>
-            <h3 class="mb-0">
-                <a href="#" class="text-dark">@concert.Title</a>
-            </h3>
-            <p class="card-text mb-auto">
-                @concert.PlaceName / @concert.DisplayTimeOpenAt OPEN / @concert.DisplayTimeStartAt START
-            </p>
-            <div class="mb-0">
-                <div class="btn-group">
-                    @if (concert.Active)
-                    {
-                    <a href="#">
-                        <i class="fa fa-calendar" />
-                        予約はこちら
-                    </a>
-                    }
+        <div class="subheading mb-5">
+            ライブ情報がありません。
+        </div>
+    }
+    else
+    {
+        @foreach (var concert in ViewModel.Concerts)
+        {
+            <div class="card mb-3">
+                <div class="card-body">
+                    <string class="d-inline-block mb-2 text-primary">
+                        @concert.DisplayDateStartAt
+                    </string>
+                    <h3 class="mb-0">
+                        <a href="#" class="text-dark">@concert.Title</a>
+                    </h3>
+                    <p class="card-text mb-auto">
+                        @concert.PlaceName / @concert.DisplayTimeOpenAt OPEN / @concert.DisplayTimeStartAt START
+                    </p>
+                    <div class="mb-0">
+                        <div class="btn-group">
+                            @if (concert.Active)
+                            {
+                                <a href="#">
+                                    <i class="fa fa-calendar" />
+                                    予約はこちら
+                                </a>
+                            }
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
+        }
     }
-}
 </section>
 
