@@ -4,6 +4,8 @@ namespace Portal264.Blazor.Domain
 {
     public class ConcertSummary
     {
+        public int Id { get; private set; }
+
         public string Title { get; private set; }
 
         private DateTime _openAt;
@@ -22,8 +24,9 @@ namespace Portal264.Blazor.Domain
 
         public string Place { get; private set; }
 
-        public ConcertSummary(string title, DateTime openAt, DateTime startAt, bool active, string place)
+        public ConcertSummary(int id, string title, DateTime openAt, DateTime startAt, bool active, string place)
         {
+            Id = id;
             Title = title;
             _openAt = openAt;
             _startAt = startAt;
