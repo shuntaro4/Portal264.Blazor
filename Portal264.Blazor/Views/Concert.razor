@@ -1,0 +1,33 @@
+﻿@page "/concerts/{Id:int}"
+@inherits ConcertBase
+
+<section class="resume-section p-3 p-lg-5 d-flex flex-column">
+    <h2>Live詳細</h2>
+
+    <h4>Live名</h4>
+    <div class="detail mb-3">
+        @ViewModel.Concert.Title
+    </div>
+
+    <h4>日程</h4>
+    <div class="detail mb-3">
+        @ViewModel.Concert.DisplayDateOpenAt / @ViewModel.Concert.DisplayTimeOpenAt OPEN / @ViewModel.Concert.DisplayTimeStartAt START
+    </div>
+
+    <h4>場所</h4>
+    <div class="detail mb-3">
+        @ViewModel.Concert.Place.Name / @ViewModel.Concert.Place.Address
+    </div>
+
+    <!-- todo: add google map -->
+
+    <h4>備考</h4>
+    <div class="detail mb-3">
+        @ViewModel.Concert.DisplayNote
+    </div>
+
+    <div class="actions">
+        <a href="/concerts" class="btn btn-secondary">戻る</a>
+    </div>
+</section>
+
