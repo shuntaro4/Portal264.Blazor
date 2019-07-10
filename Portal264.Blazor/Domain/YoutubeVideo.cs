@@ -4,7 +4,7 @@ namespace Portal264.Blazor.Domain
 {
     public class YoutubeVideo
     {
-        public int Id { get; private set; }
+        public string Id { get; private set; }
 
         public string Title { get; private set; }
 
@@ -16,7 +16,7 @@ namespace Portal264.Blazor.Domain
 
         public string ThumbnailUrl => "https://img.youtube.com/vi/" + Id + "/mqdefault.jpg";
 
-        public YoutubeVideo(int id, string title, DateTime publishedAt)
+        public YoutubeVideo(string id, string title, DateTime publishedAt)
         {
             Id = id;
             Title = title;
