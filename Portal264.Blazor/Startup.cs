@@ -15,6 +15,8 @@ namespace Portal264.Blazor
             // I don't know how to pass the value to ConcertViewModel Constructor.
             // So, I created ConcertViewModel object in Concert.razor.cs.
             // services.AddTransient<IConcertViewModel, ConcertViewModel>();
+
+            services.AddTransient<IYoutubeVideosViewModel, YoutubeVideosViewModel>();
         }
 
         public void Configure(IComponentsApplicationBuilder app)
