@@ -1,6 +1,7 @@
-﻿using Portal264.Blazor.Domain;
-using System;
+﻿using Portal264.Blazor.ApplicationServices;
+using Portal264.Blazor.Domain;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 
 namespace Portal264.Blazor.ViewModels
 {
@@ -14,15 +15,10 @@ namespace Portal264.Blazor.ViewModels
             set => _videos = value;
         }
 
-        public YoutubeVideosViewModel()
+        public async Task LoadYoutubeVideos()
         {
-            // Videos = = new ObservableCollection<YoutubeVideo>();
-            Videos = new ObservableCollection<YoutubeVideo>()
-            {
-                new YoutubeVideo("JGBLgWBXn_A", "テスト１", new DateTime(2000,12,1)),
-                new YoutubeVideo("eyOhqCLLfKU", "テスト２", new DateTime(2000,12,2)),
-                new YoutubeVideo("3aPCIDabY30", "テスト３", new DateTime(2000,12,3)),
-            };
+            IYoutubeVideoService youtubeVideoService = new YoutubeVideoService();
+            Videos = new ObservableCollection<YoutubeVideo>(await youtubeVideoService.GetVideosAsync());
         }
     }
 }
