@@ -15,6 +15,11 @@ namespace Portal264.Blazor.ViewModels
             set => _videos = value;
         }
 
+        public YoutubeVideosViewModel()
+        {
+            Videos = new ObservableCollection<YoutubeVideo>();
+        }
+
         public async Task LoadYoutubeVideos()
         {
             IYoutubeVideoService youtubeVideoService = new YoutubeVideoService();
