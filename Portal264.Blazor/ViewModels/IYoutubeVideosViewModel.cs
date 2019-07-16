@@ -4,10 +4,10 @@ using System.Threading.Tasks;
 
 namespace Portal264.Blazor.ViewModels
 {
-    public interface IYoutubeVideosViewModel
+    public interface IYouTubeVideosViewModel
     {
-        ObservableCollection<YoutubeVideo> Videos { get; }
+        ObservableCollection<YouTubeVideo> Videos { get; }
 
-        Task LoadYoutubeVideos();
+        Task LoadYouTubeVideos();
     }
 }

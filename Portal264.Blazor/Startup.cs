@@ -16,7 +16,7 @@ namespace Portal264.Blazor
             // So, I created ConcertViewModel object in Concert.razor.cs.
             // services.AddTransient<IConcertViewModel, ConcertViewModel>();
 
-            services.AddTransient<IYoutubeVideosViewModel, YoutubeVideosViewModel>();
+            services.AddTransient<IYouTubeVideosViewModel, YouTubeVideosViewModel>();
         }
 
         public void Configure(IComponentsApplicationBuilder app)

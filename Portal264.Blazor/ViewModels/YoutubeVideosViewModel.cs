@@ -5,25 +5,20 @@ using System.Threading.Tasks;
 
 namespace Portal264.Blazor.ViewModels
 {
-    public class YoutubeVideosViewModel : IYoutubeVideosViewModel
+    public class YouTubeVideosViewModel : IYouTubeVideosViewModel
     {
-        private ObservableCollection<YoutubeVideo> _videos;
+        private ObservableCollection<YouTubeVideo> _videos;
 
-        public ObservableCollection<YoutubeVideo> Videos
+        public ObservableCollection<YouTubeVideo> Videos
         {
             get => _videos;
             set => _videos = value;
         }
 
-        public YoutubeVideosViewModel()
+        public async Task LoadYouTubeVideos()
         {
-            Videos = new ObservableCollection<YoutubeVideo>();
-        }
-
-        public async Task LoadYoutubeVideos()
-        {
-            IYoutubeVideoService youtubeVideoService = new YoutubeVideoService();
-            Videos = new ObservableCollection<YoutubeVideo>(await youtubeVideoService.GetVideosAsync());
+            IYouTubeVideoService youtubeVideoService = new YouTubeVideoService();
+            Videos = new ObservableCollection<YouTubeVideo>(await youtubeVideoService.GetVideosAsync());
         }
     }
 }

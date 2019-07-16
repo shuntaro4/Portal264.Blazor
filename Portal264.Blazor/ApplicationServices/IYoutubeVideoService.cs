@@ -4,8 +4,8 @@ using System.Threading.Tasks;
 
 namespace Portal264.Blazor.ApplicationServices
 {
-    public interface IYoutubeVideoService
+    public interface IYouTubeVideoService
     {
-        Task<List<YoutubeVideo>> GetVideosAsync();
+        Task<List<YouTubeVideo>> GetVideosAsync();
     }
 }

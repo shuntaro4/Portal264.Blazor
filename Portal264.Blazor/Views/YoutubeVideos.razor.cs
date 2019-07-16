@@ -4,14 +4,14 @@ using System.Threading.Tasks;
 
 namespace Portal264.Blazor.Views
 {
-    public class YoutubeVideosBase : ComponentBase
+    public class YouTubeVideosBase : ComponentBase
     {
         [Inject]
-        public IYoutubeVideosViewModel ViewModel { get; set; }
+        public IYouTubeVideosViewModel ViewModel { get; set; }
 
         protected override async Task OnInitAsync()
         {
-            await ViewModel.LoadYoutubeVideos();
+            await ViewModel.LoadYouTubeVideos();
         }
     }
 }

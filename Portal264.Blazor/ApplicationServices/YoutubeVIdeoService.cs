@@ -1,39 +1,27 @@
-﻿using Google.Apis.Services;
-using Google.Apis.YouTube.v3;
-using Portal264.Blazor.Domain;
-using System;
+﻿using Portal264.Blazor.Domain;
+using Portal264.Blazor.YouTube;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Portal264.Blazor.ApplicationServices
 {
-    public class YoutubeVideoService : IYoutubeVideoService
+    public class YouTubeVideoService : IYouTubeVideoService
     {
-        private readonly YouTubeService _youtubeService;
-
-        public YoutubeVideoService()
+        public async Task<List<YouTubeVideo>> GetVideosAsync()
         {
-            _youtubeService = new YouTubeService(new BaseClientService.Initializer()
+            var apiKey = "<your-api-key>";
+            var youtubePlaylistReader = new YouTubePlaylistReader(apiKey)
             {
-                ApiKey = "<your-api-key>"
-            });
-        }
+                PlaylistId = "UUASYHw_S6bt_7bUhyWWu61Q",
+                MaxResults = 50
+            };
 
-        public async Task<List<YoutubeVideo>> GetVideosAsync()
-        {
-            var playlistRequest = _youtubeService.PlaylistItems.List("snippet");
-
-            playlistRequest.PlaylistId = "UUASYHw_S6bt_7bUhyWWu61Q";
-            playlistRequest.MaxResults = 50;
-
-            // todo do not work... :(
-            var playlistResponse = await playlistRequest.ExecuteAsync();
-
-            var list = new List<YoutubeVideo>();
-            foreach (var video in playlistResponse.Items)
+            var youtubeObject = await youtubePlaylistReader.GetAsync();
+            var list = new List<YouTubeVideo>();
+            foreach (var item in youtubeObject.items)
             {
-                Console.WriteLine(video.Id);
-                list.Add(new YoutubeVideo(video.Id, video.Snippet.Title, video.ContentDetails.VideoPublishedAt));
+                var youtubeVideo = new YouTubeVideo(item.snippet.resourceId.videoId, item.snippet.title, item.snippet.publishedAt);
+                list.Add(youtubeVideo);
             }
             return list;
         }
