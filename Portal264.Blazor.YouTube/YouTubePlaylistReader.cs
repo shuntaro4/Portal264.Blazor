@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Portal264.Blazor.YouTube
 {
-    public class YouTubePlaylistReader
+    public class YouTubePlaylistReader : IYouTubePlaylistReader
     {
         internal string ApiKey { get; private set; }
 

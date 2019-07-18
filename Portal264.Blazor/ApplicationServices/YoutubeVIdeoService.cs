@@ -10,7 +10,7 @@ namespace Portal264.Blazor.ApplicationServices
         public async Task<List<YouTubeVideo>> GetVideosAsync()
         {
             var apiKey = "<your-api-key>";
-            var youtubePlaylistReader = new YouTubePlaylistReader(apiKey)
+            IYouTubePlaylistReader youtubePlaylistReader = new YouTubePlaylistReader(apiKey)
             {
                 PlaylistId = "UUASYHw_S6bt_7bUhyWWu61Q",
                 MaxResults = 50
