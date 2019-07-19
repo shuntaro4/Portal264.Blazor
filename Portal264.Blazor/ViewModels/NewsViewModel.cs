@@ -18,8 +18,8 @@ namespace Portal264.Blazor.ViewModels
         {
             News = new ObservableCollection<News>()
             {
-                new News("テスト１", new DateTime(2000,12,1), DateTime.Now),
-                new News("テスト２", new DateTime(2012,12,12), DateTime.Now.AddDays(-1))
+                new News(1, "テスト１", new DateTime(2000,12,1), DateTime.Now),
+                new News(2, "テスト２", new DateTime(2012,12,12), DateTime.Now.AddDays(-1))
             };
         }
     }
