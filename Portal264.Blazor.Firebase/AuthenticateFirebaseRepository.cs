@@ -7,12 +7,14 @@ namespace Portal264.Blazor.Firebase
 {
     public class AuthenticateFirebaseRepository : IAuthenticateRepository
     {
+        private FirebaseAuthLink _authLink;
+
         public async Task<bool> LoginAsync(string mailAddress, string password)
         {
             try
             {
                 var auth = new FirebaseAuthProvider(new FirebaseConfig(FirebaseToken.ApiKey));
-                var authLink = await auth.SignInWithEmailAndPasswordAsync(mailAddress, password);
+                _authLink = await auth.SignInWithEmailAndPasswordAsync(mailAddress, password);
                 return true;
             }
             catch (Exception)
