@@ -13,9 +13,12 @@ namespace Portal264.Blazor.YouTube
 
         public int MaxResults { get; set; }
 
-        public YouTubePlaylistReader(string apiKey)
+        private HttpClient _httpClient;
+
+        public YouTubePlaylistReader(string apiKey, HttpClient httpClient)
         {
             ApiKey = apiKey;
+            _httpClient = httpClient;
         }
 
         public async Task<YouTubeJsonObject> GetAsync()
@@ -31,9 +34,9 @@ namespace Portal264.Blazor.YouTube
             urlBuilder.Append("&playlistId=" + PlaylistId);
             urlBuilder.Append("&maxResults=" + MaxResults);
             urlBuilder.Append("&key=" + ApiKey);
-            using (var httpClient = new HttpClient())
+            using (_httpClient)
             {
-                var json = await httpClient.GetStringAsync(urlBuilder.ToString());
+                var json = await _httpClient.GetStringAsync(urlBuilder.ToString());
                 return JsonConvert.DeserializeObject<YouTubeJsonObject>(json);
             }
         }
