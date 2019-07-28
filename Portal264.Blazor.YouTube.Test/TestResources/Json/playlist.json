@@ -1,0 +1,465 @@
+﻿{
+  "kind": "youtube#playlistItemListResponse",
+  "etag": "\"Bdx4f4ps3xCOOo1WZ91nTLkRZ_c/VPFrPCIsnnfhfWfVnVak44ThuBw\"",
+  "pageInfo": {
+    "totalResults": 11,
+    "resultsPerPage": 50
+  },
+  "items": [
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "\"Bdx4f4ps3xCOOo1WZ91nTLkRZ_c/VDLsktuNw7Sr7mteq8ek79aGYtU\"",
+      "id": "VVVBU1lId19TNmJ0XzdiVWh5V1d1NjFRLkpHQkxnV0JYbl9B",
+      "snippet": {
+        "publishedAt": "2018-05-06T13:50:34.000Z",
+        "channelId": "UCASYHw_S6bt_7bUhyWWu61Q",
+        "title": "Song for…(HY cover)",
+        "description": "アカペラグループ264（つむじ）\nSong for…（HY cover) - Arranged by sinn",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/JGBLgWBXn_A/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/JGBLgWBXn_A/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/JGBLgWBXn_A/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/JGBLgWBXn_A/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/JGBLgWBXn_A/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "264アカペラグループ",
+        "playlistId": "UUASYHw_S6bt_7bUhyWWu61Q",
+        "position": 0,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "JGBLgWBXn_A"
+        }
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "\"Bdx4f4ps3xCOOo1WZ91nTLkRZ_c/xGJTmqWRa4jYv6azgvlTWOTeA2o\"",
+      "id": "VVVBU1lId19TNmJ0XzdiVWh5V1d1NjFRLmV5T2hxQ0xMZktV",
+      "snippet": {
+        "publishedAt": "2016-10-10T12:58:58.000Z",
+        "channelId": "UCASYHw_S6bt_7bUhyWWu61Q",
+        "title": "Boogie Wonderland_おかやま国際音楽祭",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/eyOhqCLLfKU/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/eyOhqCLLfKU/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/eyOhqCLLfKU/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/eyOhqCLLfKU/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          }
+        },
+        "channelTitle": "264アカペラグループ",
+        "playlistId": "UUASYHw_S6bt_7bUhyWWu61Q",
+        "position": 1,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "eyOhqCLLfKU"
+        }
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "\"Bdx4f4ps3xCOOo1WZ91nTLkRZ_c/fseBDFZgCeBN4iAQtVdJ9Xf7BHY\"",
+      "id": "VVVBU1lId19TNmJ0XzdiVWh5V1d1NjFRLjNhUENJRGFiWTMw",
+      "snippet": {
+        "publishedAt": "2014-10-17T16:22:08.000Z",
+        "channelId": "UCASYHw_S6bt_7bUhyWWu61Q",
+        "title": "132（264）_Ellie My Love（サザンオールスターズ cover)",
+        "description": "アカペラグループ264（つむじ）\nを、こよなく愛する、264のコピーバンド132（ひみつ）\nEllie My Love（サザンオールスターズ cover)\nby 264主催ライブ",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/3aPCIDabY30/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/3aPCIDabY30/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/3aPCIDabY30/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/3aPCIDabY30/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/3aPCIDabY30/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "264アカペラグループ",
+        "playlistId": "UUASYHw_S6bt_7bUhyWWu61Q",
+        "position": 2,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "3aPCIDabY30"
+        }
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "\"Bdx4f4ps3xCOOo1WZ91nTLkRZ_c/8cDa6sYcFaTpGHtv3J-x-rXs-s8\"",
+      "id": "VVVBU1lId19TNmJ0XzdiVWh5V1d1NjFRLmJWb05IODdIeGlZ",
+      "snippet": {
+        "publishedAt": "2014-10-17T15:02:11.000Z",
+        "channelId": "UCASYHw_S6bt_7bUhyWWu61Q",
+        "title": "264_愛唄（GReeeeN cover）",
+        "description": "アカペラグループ264（つむじ）\n愛唄…（GReeeeN cover) - \nby 264主催ライブ",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/bVoNH87HxiY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/bVoNH87HxiY/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/bVoNH87HxiY/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/bVoNH87HxiY/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/bVoNH87HxiY/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "264アカペラグループ",
+        "playlistId": "UUASYHw_S6bt_7bUhyWWu61Q",
+        "position": 3,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "bVoNH87HxiY"
+        }
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "\"Bdx4f4ps3xCOOo1WZ91nTLkRZ_c/9N3-woU1RLKsjXwqGl3YClWGanE\"",
+      "id": "VVVBU1lId19TNmJ0XzdiVWh5V1d1NjFRLkhkbDg2S1FhV0lZ",
+      "snippet": {
+        "publishedAt": "2014-02-16T05:24:02.000Z",
+        "channelId": "UCASYHw_S6bt_7bUhyWWu61Q",
+        "title": "君に届け@とすペシャルライブ",
+        "description": "264（つむじ）を好いてくれている、ライブ主催者とすによる「とすペシャルライブ」より。\nとすのお面をつけて、全力でとすにぶつけた「とすに届け」。\nいつもありがトス！卒業おめでトス！",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/Hdl86KQaWIY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/Hdl86KQaWIY/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/Hdl86KQaWIY/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/Hdl86KQaWIY/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          }
+        },
+        "channelTitle": "264アカペラグループ",
+        "playlistId": "UUASYHw_S6bt_7bUhyWWu61Q",
+        "position": 4,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "Hdl86KQaWIY"
+        }
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "\"Bdx4f4ps3xCOOo1WZ91nTLkRZ_c/5Qf-rpcLYN1nS4Bs9sHiYP2ONdI\"",
+      "id": "VVVBU1lId19TNmJ0XzdiVWh5V1d1NjFRLlZzeFRaMWtpaWZj",
+      "snippet": {
+        "publishedAt": "2013-08-25T15:14:05.000Z",
+        "channelId": "UCASYHw_S6bt_7bUhyWWu61Q",
+        "title": "264 金沢アカペラタウン2013①",
+        "description": "アカペラグループ264（つむじ）@金沢アカペラタウン2013\n264の金沢アカペラタウン2013、1stステージです！\nさぁあなたも唱えよう、\nでぇれー ぼっけー 好きじゃけ、アカペラ好きじゃけ！！\n\nFacebook https://www.facebook.com/acappella.264\nTwitteアカウント 264acappella",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/VsxTZ1kiifc/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/VsxTZ1kiifc/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/VsxTZ1kiifc/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/VsxTZ1kiifc/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          }
+        },
+        "channelTitle": "264アカペラグループ",
+        "playlistId": "UUASYHw_S6bt_7bUhyWWu61Q",
+        "position": 5,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "VsxTZ1kiifc"
+        }
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "\"Bdx4f4ps3xCOOo1WZ91nTLkRZ_c/BeHef_eg3msmVmKqcUtseaAsWZM\"",
+      "id": "VVVBU1lId19TNmJ0XzdiVWh5V1d1NjFRLmFadjdXbVgtdV9v",
+      "snippet": {
+        "publishedAt": "2013-08-25T14:53:22.000Z",
+        "channelId": "UCASYHw_S6bt_7bUhyWWu61Q",
+        "title": "264 金沢アカペラタウン2013②",
+        "description": "アカペラグループ264（つむじ）@金沢アカペラタウン2013\n264の金沢アカペラタウン2013、2ndステージです！\n必見の264名物フォーメーション、かもめが飛んだ日。\nぜひ画面左をご刮目ください！\nFacebook https://www.facebook.com/acappella.264\nTwitteアカウント 264acappella",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/aZv7WmX-u_o/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/aZv7WmX-u_o/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/aZv7WmX-u_o/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/aZv7WmX-u_o/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          }
+        },
+        "channelTitle": "264アカペラグループ",
+        "playlistId": "UUASYHw_S6bt_7bUhyWWu61Q",
+        "position": 6,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "aZv7WmX-u_o"
+        }
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "\"Bdx4f4ps3xCOOo1WZ91nTLkRZ_c/jR5rR5mIBzj3-2u1uy2Vmukr4-I\"",
+      "id": "VVVBU1lId19TNmJ0XzdiVWh5V1d1NjFRLkpwZzhMaXVnUmVR",
+      "snippet": {
+        "publishedAt": "2013-08-04T15:44:12.000Z",
+        "channelId": "UCASYHw_S6bt_7bUhyWWu61Q",
+        "title": "A Cappella Party_Love Portion No.9 / 264 アカペラ",
+        "description": "アカペラグループ264 MAO FESTA#1 のライブ映像（前半）です！\nSEともにお楽しみください！\n後半＞http://youtu.be/EoLtN9OWjPg\nA Cappella Party - Love Portion No.9\nmember:じゅんじゅん、みーニュン、たかた、レオ、しゅん、PLAZMA（左から）",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/Jpg8LiugReQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/Jpg8LiugReQ/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/Jpg8LiugReQ/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/Jpg8LiugReQ/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          }
+        },
+        "channelTitle": "264アカペラグループ",
+        "playlistId": "UUASYHw_S6bt_7bUhyWWu61Q",
+        "position": 7,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "Jpg8LiugReQ"
+        }
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "\"Bdx4f4ps3xCOOo1WZ91nTLkRZ_c/Foamqy4Lgxj9Ituky3f383lR0Is\"",
+      "id": "VVVBU1lId19TNmJ0XzdiVWh5V1d1NjFRLkVvTHROOU9XalBn",
+      "snippet": {
+        "publishedAt": "2013-08-04T15:15:26.000Z",
+        "channelId": "UCASYHw_S6bt_7bUhyWWu61Q",
+        "title": "One more time,One more chance_愛唄 / 264 アカペラ",
+        "description": "アカペラグループ264 MAO FESTA#1 のライブ映像（後半）です！\nまた見てくださいね〜！ジャンケンポン！うふふふふふ♪\n前半＞http://youtu.be/Jpg8LiugReQ\nOne More Time One More Chance - 愛唄\n\nmember:じゅんじゅん、みーニュン、たかた、レオ、しゅん、PLAZMA（左から）",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/EoLtN9OWjPg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/EoLtN9OWjPg/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/EoLtN9OWjPg/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/EoLtN9OWjPg/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          }
+        },
+        "channelTitle": "264アカペラグループ",
+        "playlistId": "UUASYHw_S6bt_7bUhyWWu61Q",
+        "position": 8,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "EoLtN9OWjPg"
+        }
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "\"Bdx4f4ps3xCOOo1WZ91nTLkRZ_c/mb7vgvyrIPR06TbBu6vZt5EnES0\"",
+      "id": "VVVBU1lId19TNmJ0XzdiVWh5V1d1NjFRLnZBdVlkNFYybHlV",
+      "snippet": {
+        "publishedAt": "2013-05-06T02:31:20.000Z",
+        "channelId": "UCASYHw_S6bt_7bUhyWWu61Q",
+        "title": "264_アカペラバーin広島②",
+        "description": "2013.05.05に広島で行われた、アカペラバーでのライブ映像です！\n今回も悪ふざけSEをひっさげ、全力でやらかしてきました！\n曲:Acappella Party-Turn the beat around\n\n①はこちら：http://www.youtube.com/watch?v=qD_OjqquAIY\nFacebook:http://www.facebook.com/acappella.264",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/vAuYd4V2lyU/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/vAuYd4V2lyU/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/vAuYd4V2lyU/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/vAuYd4V2lyU/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          }
+        },
+        "channelTitle": "264アカペラグループ",
+        "playlistId": "UUASYHw_S6bt_7bUhyWWu61Q",
+        "position": 9,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "vAuYd4V2lyU"
+        }
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "\"Bdx4f4ps3xCOOo1WZ91nTLkRZ_c/ueE1ZLditjF91vsZM_peaCfRGN8\"",
+      "id": "VVVBU1lId19TNmJ0XzdiVWh5V1d1NjFRLnFEX09qcXF1QUlZ",
+      "snippet": {
+        "publishedAt": "2013-05-06T02:27:34.000Z",
+        "channelId": "UCASYHw_S6bt_7bUhyWWu61Q",
+        "title": "264_アカペラバーin広島①",
+        "description": "2013.05.05に広島で行われた、アカペラバーでのライブ映像です！\n今回も悪ふざけSEをひっさげ、全力でやらかしてきました！\n曲:愛唄\n\n②はこちら：http://www.youtube.com/watch?v=vAuYd4V2lyU\nFacebook:http://www.facebook.com/acappella.264",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/qD_OjqquAIY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/qD_OjqquAIY/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/qD_OjqquAIY/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/qD_OjqquAIY/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          }
+        },
+        "channelTitle": "264アカペラグループ",
+        "playlistId": "UUASYHw_S6bt_7bUhyWWu61Q",
+        "position": 10,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "qD_OjqquAIY"
+        }
+      }
+    }
+  ]
+}
